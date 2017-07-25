@@ -158,7 +158,7 @@ module.exports = merge(baseWebapckConfig, {
                     {
                         loader:'url-loader',
                         options:{
-                            limit:1,
+                            limit:2048,
                             name:'/static/images/[name].[ext]'
                         }
                     },

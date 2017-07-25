@@ -75,8 +75,7 @@ module.exports = merge(baseWebapckConfig,{
                     loaders: {
                         css: "vue-style-loader!css-loader!postcss-loader",
                         sass: "vue-style-loader!css-loader!postcss-loader!sass-loader"
-                    },
-                    //postcss: postcssCfg
+                    }
                 }
             },
             {
@@ -97,8 +96,8 @@ module.exports = merge(baseWebapckConfig,{
         hot:                true,
         historyApiFallback: true,
         inline:             true,
-        progress:           true,
-        colors:             true,
+        // progress:           true,
+        // colors:             true,
         proxy: config.dev.proxy  
     }
 });
