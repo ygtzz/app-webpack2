@@ -3,6 +3,7 @@ var config = require('./config');
 var merge = require('lodash/merge');
 var sBase = config.sBase;
 
+process.noDeprecation = true;
 module.exports = {
     entry: config.entry,
     output: {

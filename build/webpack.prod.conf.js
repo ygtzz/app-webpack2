@@ -101,8 +101,25 @@ module.exports = merge(baseWebapckConfig, {
                     // loaders: {
                     //     css: "vue-style-loader!css-loader!postcss-loader",
                     //     sass: "vue-style-loader!css-loader!postcss-loader!sass-loader"
-                    // },
-                    // postcss: postcssCfg
+                    // }
+                    loaders: {
+                        css: ExtractTextPlugin.extract({
+                            use:[
+                                {loader:'css-loader'},
+                                {loader:'postcss-loader'}
+                            ],
+                            fallback:[
+                                {loader:'style-loader'}
+                            ]
+                        }),
+                        sass: ExtractTextPlugin.extract({
+                            use:[
+                                {loader:'css-loader'},
+                                {loader:'postcss-loader'},
+                                {loader:'sass-loader'}
+                            ]
+                        })
+                    }
                 }
             },
             {
@@ -141,7 +158,7 @@ module.exports = merge(baseWebapckConfig, {
                     {
                         loader:'url-loader',
                         options:{
-                            limit:2048,
+                            limit:1,
                             name:'/static/images/[name].[ext]'
                         }
                     },
